@@ -54,7 +54,7 @@ class PhhMmTelFeature(
         telephonyManager =
             mContext
                 .getSystemService(TelephonyManager::class.java)
-                .createForSubscriptionId(SubscriptionManager.getSubscriptionId(slotId))
+                .createForSubscriptionId(SubscriptionManager.getSubId(slotId)[0])
 
         telephonyManager?.registerTelephonyCallback(
             Executors.newSingleThreadExecutor(),
